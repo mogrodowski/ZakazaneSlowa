@@ -1,0 +1,72 @@
+SPECYFIKACJA FUNKCJONALNA
+
+Michał Ogrodowski, kontakt@mogrodowski.pl
+Patryk Gałązka, patryk@galazka.pl
+
+I. OPIS OGÓLNY
+I.1 Nazwa aplikacji
+Zakazane słowa
+
+I.2 Słownik
+- karta: prezentuje hasło główne oraz listę słów zakazanych
+- hasło główne: słowo do odganięcia, prezentowane przez gracza opowaidającego
+- słowo zakazane: słowo, którego gracz opowiadający nie może wypowiedzieć
+- gracz opowaidający: osoba, która opowaida o haśle głównym
+- drużyna zgadująca: drużyna gracza opowiadającego, musi zgadnąć hasło główne, o którym opowiada gracz opowiadający
+- gracz sprawdzający: gracz z jednej z przeciwnych drużyn, który sprawdza, czy gracz opowiadający nie wypowiedział zakazanego słowa
+
+I.2  Poruszany problem
+Głównym zadaniem aplikacji będzie wyświetlanie kart z hasłem głównym oraz listą słów zakazanych.
+
+Zasady gry:
+- gracze dzielą się na drużyny (najlepiej dwuosobowe)
+- jeden gracz (gracz Opowiadający) z drużyny otrzymuje kartę z hasełm głównym oraz listą słów zakazanych
+- gracz Opowiadający opowaida o haśle głównym (nie może powiedzieć słów zakaznych)
+- drużyna gracza Opowiadającego ma okreslony czas na odganięcie hasła głównego
+- gracz z jednej z drużyny przeciwnej sprawdza, czy gracz opowiadający nie wypowiedział słowa zakazanego
+- jeśli drużyna zgadująca odganie hasło główne dostaje punkt 
+- jeśli gracz opowiadający użyje słowa zakazanego lub nie zmieści się w czasie drużyny przeciwne dostają punkt, a gracz opowiadający dostaje kolejną kartę
+
+
+I.3 Użytkownik docelowy
+Aplikacja przeznaczona będzie dla użytkowników urządzeń mobilnych z systemem operacyjnym Android od wersji Jelly Bean 4.2.
+
+II. FUNKCJONALNOŚĆ
+- wybór czasu trwania rozgrywki
+- wyrób liczby i nazw drużyn
+- losowanie karty
+- odliczanie pozostałego czasu
+- pobieranie aktualnej bazy kart z zewnętrznej bazy danych
+- wybór języka w konfiguracji[?]
+
+III. STRUKTURA KATALOGÓW (.java)
+- katalog główny: aktywności oraz klasa aplikacji
+- data: pliki związane z bazą danych, obiekty DAO, klasy tabel bazy danych, helpery i managery do łączenia się z baza dnaych
+- model: modele (np. Card)
+
+
+IV. SCENARIUSZ DZIAŁANIA PROGRAMU
+1. Użytkownik uruchamia aplikację
+2. Wyświetla się SplashScren (ekran powitalny) - po np. 5 sekundach lub kliknięciu aktywność wyłącza się
+3. Wyświetla się aktywność z formularzem: czas pojedynczej rozgrywki, liczba rozgrywek, liczba punktów za odganięte hasło, liczba punktów za użycie słowa zakazanego
+4. Wyświetla się aktywność z formularzem: kilka inputów z nazwami drużyn oraz przycisk: "Rozpocznij grę"
+[wszystkie pola formularzy mają domyślne wartości]
+5. Wyświetla się aktywność z:
+- nazwą drużyny, której odgaduje hasło główne opowaidane przez gracza opowiadającego
+- karta z hasłem głównym oraz listą słów zakazanych
+- pozostały czas
+- przyciski: "Hasło odgadnięte!", "Zakazane słowo"
+- zakończ grę (z potwierdzeniem: czy na pewno chcez zakończyć grę)
+
+[Użytkownik sprawdzający klika Hasło odganięte]
+5a. Drużyna odgadująca dostaje punkt
+6a. Aktywność z kartą dla tej samej drużyny
+[Użytkownik sprawdzający klika Zakazane słowo]
+5b. Drużyny przeciwne dostają punkt 
+6b. Aktywność z kartą dla tej astępnej drużyny
+
+7. Gra kończy się jeśli skończą się karty (ustawione w konfiguracji w punkcjie 3) lub jeśli użytkownik kliknie przycisk "Zakończ grę"
+8. Wyświetla się aktywność z listą drużyn i punktami, przycisk "Nowa gra"
+
+ 
+
