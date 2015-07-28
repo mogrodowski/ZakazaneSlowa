@@ -41,7 +41,7 @@ II. FUNKCJONALNOŚĆ
 
 III. STRUKTURA KATALOGÓW (.java)
 - katalog główny: aktywności oraz klasa aplikacji
-- data: pliki związane z bazą danych, obiekty DAO, klasy tabel bazy danych, helpery i managery do łączenia się z baza dnaych
+- data: pliki związane z bazą danych, obiekty DAO, klasy tabel bazy danych, helpery i managery do łączenia się z bazą dnaych
 - model: modele (np. Card)
 
 
