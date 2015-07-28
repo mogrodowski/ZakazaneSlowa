@@ -48,10 +48,11 @@ III. STRUKTURA KATALOGÓW (.java)
 IV. SCENARIUSZ DZIAŁANIA PROGRAMU
 1. Użytkownik uruchamia aplikację
 2. Wyświetla się SplashScren (ekran powitalny) - po np. 5 sekundach lub kliknięciu aktywność wyłącza się
-3. Wyświetla się aktywność z formularzem: czas pojedynczej rozgrywki, liczba rozgrywek, liczba punktów za odganięte hasło, liczba punktów za użycie słowa zakazanego
-4. Wyświetla się aktywność z formularzem: kilka inputów z nazwami drużyn oraz przycisk: "Rozpocznij grę"
+3. Wyświetla się aktywność z przyciskami: "Nowa gra", "Zaktualizuj karty"
+4. Wyświetla się aktywność z formularzem: czas pojedynczej rozgrywki, liczba rozgrywek, liczba punktów za odganięte hasło, liczba punktów za użycie słowa zakazanego
+5. Wyświetla się aktywność z formularzem: kilka inputów z nazwami drużyn oraz przycisk: "Rozpocznij grę"
 [wszystkie pola formularzy mają domyślne wartości]
-5. Wyświetla się aktywność z:
+6. Wyświetla się aktywność z:
 - nazwą drużyny, której odgaduje hasło główne opowaidane przez gracza opowiadającego
 - karta z hasłem głównym oraz listą słów zakazanych
 - pozostały czas
@@ -59,14 +60,14 @@ IV. SCENARIUSZ DZIAŁANIA PROGRAMU
 - zakończ grę (z potwierdzeniem: czy na pewno chcez zakończyć grę)
 
 [Użytkownik sprawdzający klika Hasło odganięte]
-5a. Drużyna odgadująca dostaje punkt
-6a. Aktywność z kartą dla tej samej drużyny
+7a. Drużyna odgadująca dostaje punkt
+8a. Aktywność z kartą dla tej samej drużyny
 [Użytkownik sprawdzający klika Zakazane słowo]
-5b. Drużyny przeciwne dostają punkt 
-6b. Aktywność z kartą dla tej astępnej drużyny
+7b. Drużyny przeciwne dostają punkt
+8b. Aktywność z kartą dla tej astępnej drużyny
 
-7. Gra kończy się jeśli skończą się karty (ustawione w konfiguracji w punkcjie 3) lub jeśli użytkownik kliknie przycisk "Zakończ grę"
-8. Wyświetla się aktywność z listą drużyn i punktami, przycisk "Nowa gra"
+9. Gra kończy się jeśli skończą się karty (ustawione w konfiguracji w punkcjie 3) lub jeśli użytkownik kliknie przycisk "Zakończ grę"
+10. Wyświetla się aktywność z listą drużyn i punktami, przycisk "Nowa gra"
 
  
 
