@@ -61,6 +61,7 @@ IV. SCENARIUSZ DZIAŁANIA PROGRAMU
 [Użytkownik sprawdzający klika Hasło odgadnięte]
 7a. Drużyna odgadująca dostaje punkt
 8a. Aktywność z kartą dla tej samej drużyny
+
 [Użytkownik sprawdzający klika Zakazane słowo]
 7b. Drużyny przeciwne dostają punkt
 8b. Aktywność z kartą dla następnej drużyny
