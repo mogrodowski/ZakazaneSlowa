@@ -6,15 +6,11 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 public class PortabooApp extends Application {
 
     private ConnectivityManager cMgr;
 
-    //
-    // lifecycle
-    //
     @Override
     public void onCreate() {
         super.onCreate();
