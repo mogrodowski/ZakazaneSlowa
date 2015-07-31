@@ -12,12 +12,14 @@ import java.util.TimerTask;
 
 public class SplashScreenActivity extends Activity {
 
-    public static final int SPLASH_TIMEOUT = 2000;
+    public static final int SPLASH_TIMEOUT = 5000;
+    private PortabooApp app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        app = (PortabooApp) getApplication();
     }
 
     @Override
