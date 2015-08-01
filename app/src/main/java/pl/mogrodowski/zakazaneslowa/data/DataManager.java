@@ -5,13 +5,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.SystemClock;
-import android.util.Log;
 import java.util.List;
 
 import pl.mogrodowski.zakazaneslowa.data.CardTable.CardColumns;
-import pl.mogrodowski.zakazaneslowa.Constants;
 import pl.mogrodowski.zakazaneslowa.model.Card;
-
 
 public class DataManager implements DataManagerI{
 
@@ -24,7 +21,6 @@ public class DataManager implements DataManagerI{
 
         SQLiteOpenHelper openHelper = new OpenHelper(this.context);
         db = openHelper.getWritableDatabase();
-        Log.i(Constants.LOG_TAG, "DataManagerImpl created, db open status: " + db.isOpen());
 
         cardDao = new CardDao(db);
     }
@@ -46,43 +42,47 @@ public class DataManager implements DataManagerI{
         }
     }
 
-    private void resetDb() {
-        Log.i(Constants.LOG_TAG, "Resetting database connection (close and re-open).");
+    private void resetDb(){
         closeDb();
         SystemClock.sleep(500);
         openDb();
     }
 
     @Override
-    public Card getCard(long movieId) {
+    public Card getCard(long movieId){
         Card card = cardDao.get(movieId);
         return card;
     }
 
     @Override
-    public List<Card> getCards() {
+    public List<Card> getCards(){
         return cardDao.getAll();
     }
 
     @Override
-    public Card findCard(String name) {
+    public Card findCard(String name){
         Card card = cardDao.find(name);
         return card;
     }
 
     @Override
-    public long saveCard(Card category) {
-        return cardDao.save(category);
+    public long saveCard(Card card){
+        return cardDao.save(card);
     }
 
     @Override
-    public void deleteCard(Card card) {
+    public void deleteCard(Card card){
         cardDao.delete(card);
     }
 
     @Override
-    public Cursor getCardCursor() {
+    public Cursor getCardCursor(){
         return db.rawQuery("select " + CardColumns._ID + ", " + CardColumns.HEAD_WORD
                 + " from " + CardTable.TABLE_NAME, null);
+    }
+
+    @Override
+    public void deleteCards(){
+        cardDao.deleteAll();
     }
 }
