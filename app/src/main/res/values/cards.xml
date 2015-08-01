@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="card_1">
+        <item name="head_word">Pies</item>
+        <item name="word1">zwierzę</item>
+        <item name="word2">szczekać</item>
+        <item name="word3">przyjaciel</item>
+        <item name="word4">czworonóg</item>
+        <item name="word5">burek</item>
+    </string-array>
+    <string-array name="card_2">
+        <item name="head_word">Eskadra</item>
+        <item name="word1">pilot</item>
+        <item name="word2">jednostka</item>
+        <item name="word3">latać</item>
+        <item name="word4">samolot</item>
+        <item name="word5"></item>
+    </string-array>
+    <string-array name="card_3">
+        <item name="head_word">Łzy</item>
+        <item name="word1">plakać</item>
+        <item name="word2">smutek</item>
+        <item name="word3">żal</item>
+        <item name="word4">oczy</item>
+        <item name="word5">słona woda</item>
+    </string-array>
+
+    <array name="cards">
+        <item>@array/card_1</item>
+        <item>@array/card_2</item>
+        <item>@array/card_3</item>
+    </array>
+</resources>

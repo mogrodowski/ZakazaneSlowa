@@ -1,6 +1,7 @@
 package pl.mogrodowski.zakazaneslowa.data;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -8,6 +9,7 @@ import android.util.Log;
 import pl.mogrodowski.zakazaneslowa.R;
 
 import pl.mogrodowski.zakazaneslowa.Constants;
+import pl.mogrodowski.zakazaneslowa.model.Card;
 
 
 public class OpenHelper extends SQLiteOpenHelper {
@@ -46,15 +48,25 @@ public class OpenHelper extends SQLiteOpenHelper {
       Log.i(Constants.LOG_TAG, "DataHelper.OpenHelper onCreate creating database " + DataConstants.DATABASE_NAME);
 
       CardTable.onCreate(db);
-      CardDao categoryDao = new CardDao(db);
-      //TODO: if(database card is empty) then add cards from xml
+      CardDao cardDao = new CardDao(db);
 
-      /*
-      String[] categories = context.getResources().getStringArray(R.array.tmdb_categories);
-      for (String cat : categories) {
-         categoryDao.save(new Category(0, cat));
+      TypedArray cards = context.getResources().obtainTypedArray(R.array.cards);
+      int cards_length = cards.length();
+
+      for(int i = 0; i < cards_length; i++){
+         int id = cards.getResourceId(i, 0);
+         if(id > 0){
+            String[] card = context.getResources().getStringArray(id);
+
+            try{
+               Card c = new Card(card[0], card[1], card[2], card[3], card[4], card[5]);
+               cardDao.save(c);
+            }
+            catch(Exception e){
+
+            }
+         }
       }
-      */
    }
 
    @Override

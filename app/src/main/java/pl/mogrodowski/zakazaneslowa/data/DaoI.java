@@ -13,4 +13,6 @@ public interface DaoI<T> {
     T get(long id);
 
     List<T> getAll();
+
+    void deleteAll();
 }

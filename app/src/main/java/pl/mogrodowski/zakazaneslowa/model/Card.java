@@ -65,13 +65,11 @@ public class Card extends ModelBase implements Comparable<Card> {
         this.id = id;
     }
 
-    public Card(long id, String head_word){
-        this.id = id;
+    public Card(String head_word){
         this.head_word = head_word;
     }
 
-    public Card(long id, String head_word, String word_1, String word_2, String word_3, String word_4, String word_5){
-        this.id = id;
+    public Card(String head_word, String word_1, String word_2, String word_3, String word_4, String word_5){
         this.head_word = head_word;
 
         this.word_1 = word_1;

@@ -50,8 +50,8 @@ public class CardDao implements DaoI<Card>{
         values.put(CardColumns.WORD_3, entity.getWord_1());
         values.put(CardColumns.WORD_4, entity.getWord_1());
         values.put(CardColumns.WORD_5, entity.getWord_1());
-        db.update(CardTable.TABLE_NAME, values, BaseColumns._ID + " = ?", new String[] { String
-                .valueOf(entity.getId()) });
+        db.update(CardTable.TABLE_NAME, values, BaseColumns._ID + " = ?", new String[]{String
+                .valueOf(entity.getId())});
     }
 
     @Override
@@ -103,7 +103,7 @@ public class CardDao implements DaoI<Card>{
     public Card find(String name) {
         long cardId = 0L;
         String sql = "select _id from " + CardTable.TABLE_NAME + " where upper(" + CardColumns.HEAD_WORD + ") = ? limit 1";
-        Cursor c = db.rawQuery(sql, new String[] { name.toUpperCase() });
+        Cursor c = db.rawQuery(sql, new String[]{name.toUpperCase()});
         if (c.moveToFirst()) {
             cardId = c.getLong(0);
         }
@@ -128,5 +128,10 @@ public class CardDao implements DaoI<Card>{
         }
 
         return card;
+    }
+
+    @Override
+    public void deleteAll(){
+        db.delete(CardTable.TABLE_NAME, null, null);
     }
 }
