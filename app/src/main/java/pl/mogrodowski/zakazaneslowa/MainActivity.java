@@ -1,14 +1,9 @@
 package pl.mogrodowski.zakazaneslowa;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.PendingIntent;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.telephony.SmsManager;
-import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import pl.mogrodowski.zakazaneslowa.model.Card;
 import pl.mogrodowski.zakazaneslowa.util.CardUpdater;
 
 public class MainActivity extends Activity {
@@ -54,12 +50,20 @@ public class MainActivity extends Activity {
         update_cards = (Button) findViewById(R.id.button_update_cards);
         update_cards.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View arg) {
-                //TODO: jakis loader i update cards
-
-                app.getDataManager().updateCards();
+            public void onClick(View arg){
+                if(app.connectionPresent()){
+                    TextView update_cards_status = (TextView) findViewById(R.id.update_cards_status);
+                    new CardUpdater(update_cards_status, app.getDataManager()).execute();
+                }
+                else{
+                    Toast.makeText(app.getApplicationContext(), "Internet connection error", Toast.LENGTH_LONG).show();
+                }
             }
         });
+
+        for(Card c: app.getDataManager().getCards()){
+            Log.i(Constants.LOG_TAG, "Karta: " + c.getHead_word());
+        }
     }
 
     @Override

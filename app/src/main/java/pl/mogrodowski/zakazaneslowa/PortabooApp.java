@@ -14,13 +14,14 @@ public class PortabooApp extends Application {
 
     private ConnectivityManager cMgr;
     private DataManagerI dataManager;
-    //private
+    private SharedPreferences preferences;
 
     @Override
     public void onCreate() {
         super.onCreate();
         cMgr = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         dataManager = new DataManager(this);
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
     }
 
     @Override
@@ -38,5 +39,9 @@ public class PortabooApp extends Application {
 
     public DataManagerI getDataManager() {
         return this.dataManager;
+    }
+
+        public SharedPreferences getPreferences() {
+        return this.preferences;
     }
 }

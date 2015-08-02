@@ -20,5 +20,5 @@ public interface DataManagerI {
 
     public void deleteCards();
 
-    public void updateCards();
+    public CardDao getCardDao();
 }
