@@ -14,6 +14,7 @@ public class PortabooApp extends Application {
 
     private ConnectivityManager cMgr;
     private DataManagerI dataManager;
+    //private
 
     @Override
     public void onCreate() {

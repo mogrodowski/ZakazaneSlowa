@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="fill_parent" android:layout_width="fill_parent">
+    <PreferenceCategory android:title="Application Settings">
+        <EditTextPreference
+            android:dialogTitle="Game time"
+            android:key="time"
+            android:summary="Game time"
+            android:title="Game time" />
+
+        <EditTextPreference
+            android:dialogTitle="Games number"
+            android:key="games"
+            android:summary="Games number"
+            android:title="Games number" />
+
+        <EditTextPreference
+            android:dialogTitle="Point"
+            android:key="point"
+            android:summary="Point"
+            android:title="Point" />
+
+        <EditTextPreference
+            android:dialogTitle="Taboo point"
+            android:key="taboo_point"
+            android:summary="Taboo point"
+            android:title="Taboo point" />
+    </PreferenceCategory>
+</PreferenceScreen>

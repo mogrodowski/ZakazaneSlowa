@@ -9,12 +9,14 @@ import java.util.List;
 
 import pl.mogrodowski.zakazaneslowa.data.CardTable.CardColumns;
 import pl.mogrodowski.zakazaneslowa.model.Card;
+import pl.mogrodowski.zakazaneslowa.util.CardUpdater;
 
 public class DataManager implements DataManagerI{
 
     private Context context;
     private SQLiteDatabase db;
     private CardDao cardDao;
+    private CardUpdater cardUpdater;
 
     public DataManager(Context context){
         this.context = context;
@@ -23,6 +25,7 @@ public class DataManager implements DataManagerI{
         db = openHelper.getWritableDatabase();
 
         cardDao = new CardDao(db);
+        cardUpdater = new CardUpdater();
     }
 
     public SQLiteDatabase getDb() {
@@ -84,5 +87,9 @@ public class DataManager implements DataManagerI{
     @Override
     public void deleteCards(){
         cardDao.deleteAll();
+    }
+
+    public void updateCards(){
+        this.cardUpdater.updateCards();
     }
 }

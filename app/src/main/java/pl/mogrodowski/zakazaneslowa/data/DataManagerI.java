@@ -19,4 +19,6 @@ public interface DataManagerI {
     public Cursor getCardCursor();
 
     public void deleteCards();
+
+    public void updateCards();
 }
