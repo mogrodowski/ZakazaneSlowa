@@ -60,10 +60,6 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
-        for(Card c: app.getDataManager().getCards()){
-            Log.i(Constants.LOG_TAG, "Karta: " + c.getHead_word());
-        }
     }
 
     @Override

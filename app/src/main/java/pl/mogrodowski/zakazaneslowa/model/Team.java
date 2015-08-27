@@ -6,6 +6,14 @@ public class Team {
     private String name;
     private int points;
 
+    public Team(){
+
+    }
+
+    public Team(String name){
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }

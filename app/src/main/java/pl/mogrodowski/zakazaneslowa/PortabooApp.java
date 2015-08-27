@@ -9,12 +9,14 @@ import android.preference.PreferenceManager;
 
 import pl.mogrodowski.zakazaneslowa.data.DataManager;
 import pl.mogrodowski.zakazaneslowa.data.DataManagerI;
+import pl.mogrodowski.zakazaneslowa.model.Game;
 
 public class PortabooApp extends Application {
 
     private ConnectivityManager cMgr;
     private DataManagerI dataManager;
     private SharedPreferences preferences;
+    private Game game;
 
     @Override
     public void onCreate() {
@@ -22,6 +24,7 @@ public class PortabooApp extends Application {
         cMgr = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
         dataManager = new DataManager(this);
         preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        game = new Game();
     }
 
     @Override
@@ -41,7 +44,11 @@ public class PortabooApp extends Application {
         return this.dataManager;
     }
 
-        public SharedPreferences getPreferences() {
+    public SharedPreferences getPreferences() {
         return this.preferences;
+    }
+
+    public Game getGame(){
+        return game;
     }
 }

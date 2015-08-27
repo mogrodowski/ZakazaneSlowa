@@ -6,7 +6,76 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="pl.mogrodowski.zakazaneslowa.TeamsActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team 1"
+        android:id="@+id/textViewTeam1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextTeam1"
+        android:layout_below="@+id/textViewTeam1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team 2"
+        android:id="@+id/textViewTeam2"
+        android:layout_below="@+id/editTextTeam1"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextTeam2"
+        android:layout_below="@+id/textViewTeam2"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/editTextTeam1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team 3"
+        android:id="@+id/textViewTeam3"
+        android:layout_below="@+id/editTextTeam2"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextTeam3"
+        android:layout_below="@+id/textViewTeam3"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/editTextTeam2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Team 4"
+        android:id="@+id/textViewTeam4"
+        android:layout_below="@+id/editTextTeam3"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextTeam4"
+        android:layout_below="@+id/textViewTeam4"
+        android:layout_alignEnd="@+id/editTextTeam3"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GRAJ"
+        android:id="@+id/buttonPlay"
+        android:layout_below="@+id/editTextTeam4"
+        android:layout_alignEnd="@+id/editTextTeam4"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
